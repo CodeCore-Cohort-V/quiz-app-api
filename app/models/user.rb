@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
-  has_secure_password
 
-  validates: :email, uniqueness: true, presence: true,
-   format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: [:create, :update] }
+  has_many :attempts
+  has_many :choices, through: :attempts
 
-end
+  has_many :bundles
+  has_many :queuers
+  has many :queued_bundles, through: :queuers, source: :bundle
+
+  validates :username, presence: true
