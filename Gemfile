@@ -14,7 +14,8 @@ gem 'slim-rails'
 gem 'animate-rails'
 gem 'font-awesome-rails'
 gem 'faker'
-
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 group :development do
   gem 'spring'
