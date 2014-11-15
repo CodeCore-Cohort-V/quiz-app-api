@@ -1,6 +1,6 @@
-class CreateQueuedBundles < ActiveRecord::Migration
+class DropQueuedBundlesTable < ActiveRecord::Migration
   def change
-    create_table :queued_bundles do |t|
+    drop_table :queued_bundles do |t|
       t.references :user
       t.references :bundle
 

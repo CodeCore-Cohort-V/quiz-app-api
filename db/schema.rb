@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115180312) do
+ActiveRecord::Schema.define(version: 20141115193514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,11 @@ ActiveRecord::Schema.define(version: 20141115180312) do
     t.integer  "position"
   end
 
-  create_table "queued_bundles", force: true do |t|
+  create_table "queuers", force: true do |t|
     t.integer  "user_id"
     t.integer  "bundle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "last_question_id"
   end
 
   create_table "topics", force: true do |t|
