@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141115204029) do
   end
 
   create_table "queuers", force: true do |t|
+    t.integer  "last_question_id"
     t.integer  "user_id"
     t.integer  "bundle_id"
     t.datetime "created_at"
