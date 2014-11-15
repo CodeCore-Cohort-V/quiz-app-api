@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :bundles
   has_many :queuers
-  has many :queued_bundles, through: :queuers, source: :bundle
+  has_many :queued_bundles, through: :queuers, source: :bundle
 
   validates :username, presence: true
+
+end
