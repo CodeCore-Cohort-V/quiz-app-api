@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :attempts
   has_many :choices, through: :attempts
 
@@ -7,8 +8,3 @@ class User < ActiveRecord::Base
   has many :queued_bundles, through: :queuers, source: :bundle
 
   validates :username, presence: true
-  validates :email, presence: true, email_format: true
-
-  
-
-end
