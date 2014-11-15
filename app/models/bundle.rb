@@ -5,5 +5,6 @@ class Bundle < ActiveRecord::Base
   has_many :questions
   has_many :queuers
   
+  validates :difficulty, presence: true
 
 end
