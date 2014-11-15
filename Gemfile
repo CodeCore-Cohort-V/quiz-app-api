@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'animate-rails'
 gem 'font-awesome-rails'
 gem 'faker'
+gem 'simple_form'
 
 
 group :development do
