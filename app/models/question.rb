@@ -3,5 +3,6 @@ class Question < ActiveRecord::Base
   has_many :choices
 
   validates :type, presence: true
+  validates :content, presence: true
 
 end
