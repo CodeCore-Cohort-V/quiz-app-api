@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :attempts, only: [:create]
-    resources :bundles,  only: [:show]    
-    resources :topics,   only: [:index, :show]    
-    resources :queuers,  only: [:index, :create]
+    resources :attempts, only: [:create], defaults: {format: :json}
+    resources :bundles,  only: [:show], defaults: {format: :json}
+    resources :topics,   only: [:index, :show], defaults: {format: :json}
+    resources :queuers,  only: [:index, :create], defaults: {format: :json}
   end
-
+      
 end
