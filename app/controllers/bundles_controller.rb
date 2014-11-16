@@ -12,8 +12,7 @@ class BundlesController < ApplicationController
 
   def new
     @bundle = Bundle.new
-    # @bundle.questions.build
-    
+    @bundle.questions.build
   end
 
   def create
@@ -43,7 +42,7 @@ class BundlesController < ApplicationController
   end
 
    def bundle_params
-    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :type, :content, :_destroy])
+    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :question_type, :content, :_destroy])
   end
 
 end
