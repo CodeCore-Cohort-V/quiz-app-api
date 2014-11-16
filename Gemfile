@@ -17,8 +17,7 @@ gem 'faker'
 gem 'simple_form'
 gem 'cocoon'
 gem 'activeadmin', github: 'activeadmin'
-gem 'devise'
-
+gem 'devise'  #used for admin only
 
 group :development do
   gem 'spring'

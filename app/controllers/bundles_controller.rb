@@ -10,10 +10,13 @@ class BundlesController < ApplicationController
     @bundles = Bundle.all
   end
 
+<<<<<<< HEAD
   def index
     @bundles = Bundle.all
   end
 
+=======
+>>>>>>> e4052ab83e10ac60a13648120f864398a259f9f6
   def new
     @bundle = Bundle.new
     # @bundle.questions.build
