@@ -1,1 +1,9 @@
 h1 Bundle Index
+hr
+- @bundles.each do |bundle|
+  .panel.panel-default
+  h3.push-right= bundle.name
+    - bundle.questions.each do |question|
+      = question.name
+br
+= link_to "Add Le question", new_bundle_path
