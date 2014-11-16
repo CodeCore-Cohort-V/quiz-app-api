@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  def sign_in(user)
+  def sign_in_user(user)
     session[:user_id] = user.id
   end
 
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
 
   def authenticate_user!
-    redirect_to(new_session_path, alert: "Sign in before proceeding") unless user_signed_in?
+    redirect_to(new_user_session_path, alert: "Sign in before proceeding") unless user_signed_in?
   end
 
   def current_user
