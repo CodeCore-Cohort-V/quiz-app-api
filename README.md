@@ -34,3 +34,54 @@ Redirects to new_session_path with flash message if user is not signed in. Users
 Finds a user from the db with the session user_id. Helper method available in views.
 
 ---
+
+
+API Routes
+================
+####NEED TO FIGURE OUT HOW TO IDENTIFY THE USER
+
+---
+`/api/topics`
+
+
+`topics#index`
+
+Index all topics
+
+---
+`/api/topics/:id`
+
+
+`topics#show`
+
+Index all bundles where topic_id is topic name. 
+
+---
+`/api/queuers/create/:bundle_id`    POST
+
+`queuers#create`
+
+Creates a new queue instance with bundle id and user id. Returns {saved: boolean}
+
+---
+`/api/queuers`
+
+`queuers#index`
+
+Lists all bundles in user's queue, listed by desc created at date of queuer. Sends only bundles, not nested resources
+
+---
+`/api/attempts/:choice_id` POST
+
+`attempts#create`
+
+Creates a new attempt in db. Returns {saved: boolean}
+
+---
+
+`/api/bundles/:id`
+
+`bundle#show`
+
+Return bundle with nested questions and nested choices
+
