@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "We did it Martha, we're in!"
     else
-      flash.now[:alert] = "You messed something up. Either type it right or created a new account"
+      flash.now[:alert] = "You messed something up. Either type it right or create a new account"
       render :new
     end
   end
