@@ -6,8 +6,8 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    = render 'layouts/nav'
-    = render 'layouts/flash'
     .container 
+      = render 'layouts/nav'
+      = render 'layouts/flash'
       = yield
   

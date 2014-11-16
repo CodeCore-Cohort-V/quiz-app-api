@@ -1,4 +1,13 @@
 .nested-fields
-  = f.input :content
-  = f.input :correct, :as => :boolean
-  = link_to_remove_association "remove choice", f
+  .form-group
+    = f.label         :content
+    = f.text_field    :content, class: "form-control"
+    br
+    = f.label         :correct
+    = f.radio_button  :correct, true
+    |  
+    |  
+    = f.label         :correct, "Incorrect"
+    = f.radio_button  :correct, false
+    br
+    = link_to_remove_association "remove choice", f

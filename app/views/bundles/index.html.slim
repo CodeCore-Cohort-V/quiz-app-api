@@ -1,10 +1,10 @@
 h1 Bundle Index
 hr
 - @bundles.each do |bundle|
-  .panel.panel-default
-  h3.push-right= bundle.name
-    - bundle.questions.each do |question|
-      = question.name
+  h2= link_to bundle.name, bundle
+  = link_to "#{icon('edit')} Edit".html_safe, edit_bundle_path(bundle), class: "btn btn-primary btn-xs"
+  = link_to "#{icon('trash-o')} Delete".html_safe, bundle, method: :delete, data: { confirm: "Are you use you want to delete this project?! :(" }, class: "btn btn-danger btn-xs"
+  hr
+
 br
-= link_to "Add Le bundle", new_bundle_path
-/ "#{icon('trash-o')}".html_safe
+= link_to "#{icon('plus')} Add".html_safe, new_bundle_path, class: "btn btn-success"

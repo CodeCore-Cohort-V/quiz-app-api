@@ -6,17 +6,14 @@ class BundlesController < ApplicationController
     @bundles = current_user.bundles
   end
 
-  def index
-    @bundles = Bundle.all
-  end
-
   def new
     @bundle = Bundle.new
-    @bundle.questions.build
+    # @bundle.questions.build
   end
 
   def create
     @bundle = Bundle.new(bundle_params) 
+    @bundle.user = current_user
     if @bundle.save
       redirect_to root_path, notice: "Bundle created"
     else
@@ -30,9 +27,23 @@ class BundlesController < ApplicationController
   end
 
   def update
+    @bundle.update bundle_params
+    if @bundle.save
+      redirect_to @bundle, notice: "Updated Successfully!! :D"
+    else
+      render edit
+    end
+  end
+
+  def show
   end
 
   def destroy  
+    if @bundle.destroy
+      redirect_to root_path
+    else 
+      redirect_to root_path
+    end
   end
 
   private
@@ -42,7 +53,8 @@ class BundlesController < ApplicationController
   end
 
    def bundle_params
-    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :question_type, :content, :_destroy])
+    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :question_type, :content, :_destroy, 
+                                                       choices_attributes: [:id, :correct, :content, :_destroy ]])
   end
 
 end
