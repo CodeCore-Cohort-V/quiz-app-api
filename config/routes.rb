@@ -9,4 +9,11 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
+  namespace :api do
+    resources :attempts, only: [:create]
+    resources :bundles,  only: [:show]    
+    resources :topics,   only: [:index, :show]    
+    resources :queuers,  only: [:index, :create]
+  end
+
 end
