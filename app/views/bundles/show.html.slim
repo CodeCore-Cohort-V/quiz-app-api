@@ -1,0 +1,12 @@
+h1= @bundle.name
+= link_to "#{icon('edit')} Edit".html_safe, edit_bundle_path, class: "btn btn-primary btn-xs"
+= link_to "#{icon('trash-o')} Delete".html_safe, @bundle, method: :delete, data: { confirm: "Are you use you want to delete this project?! :(" }, class: "btn btn-danger btn-xs"
+br
+br
+- @bundle.questions.each do |question|
+  p= question.question_type
+  p= question.content
+  br
+  - question.choices.each do |choice|
+    p= choice.content
+    p= choice.correct
