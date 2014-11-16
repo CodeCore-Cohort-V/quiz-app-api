@@ -1,7 +1,9 @@
-class AttemptsController < ActionController::Base
+module Api
+  class AttemptsController < ActionController::Base
 
-  def create
-    
+    def create
+      
+    end
+
   end
-
 end

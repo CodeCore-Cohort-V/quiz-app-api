@@ -1,7 +1,9 @@
-class BundlesController < ActionController::Base
+module Api
+  class BundlesController < ActionController::Base
 
-  def show
+    def show
+
+    end
 
   end
-
 end
