@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :bundles
   resources :users
-  resources :sessions, only: [:new, :create] do
+  resources :user_sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
 
