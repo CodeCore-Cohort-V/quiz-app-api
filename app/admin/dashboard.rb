@@ -14,21 +14,23 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column do
-        panel "Approved" do
+        panel "Pending" do
           ul do
-              Bundle.all.map do |post|
-              li link_to(post.name, admin_bundle_path(post)) 
-               para post.difficulty
+            Bundle.all.map do |post|
+              if post.approved == false
+                li link_to(post.name, admin_bundle_path(post)) 
+                para post.difficulty
+              end
             end
           end
         end
       end
 
-      column do
-        panel "Pending" do
-          para "Welcome to ActiveAdmin."
-        end
-      end
+      # column do
+      #   panel "Pending" do
+      #     para "Welcome to ActiveAdmin."
+      #   end
+      # end
     end
   end # content
 end
