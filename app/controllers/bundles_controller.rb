@@ -53,8 +53,7 @@ class BundlesController < ApplicationController
   end
 
    def bundle_params
-    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :question_type, :content, :_destroy, 
-                                                       choices_attributes: [:id, :correct, :content, :_destroy ]])
+    params.require(:bundle).permit(:name, :difficulty, questions_attributes: [:id, :question_type, :content, :_destroy, choices_attributes: [:id, :correct, :content, :_destroy ]])
   end
 
 end
