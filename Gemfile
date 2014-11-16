@@ -19,6 +19,7 @@ gem 'cocoon'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+
 group :development do
   gem 'spring'
   gem 'interactive_editor'

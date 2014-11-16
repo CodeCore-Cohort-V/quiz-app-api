@@ -10,9 +10,14 @@ class BundlesController < ApplicationController
     @bundles = Bundle.all
   end
 
+  def index
+    @bundles = Bundle.all
+  end
+
   def new
     @bundle = Bundle.new
-    @bundle.questions.build
+    # @bundle.questions.build
+    
   end
 
   def create
