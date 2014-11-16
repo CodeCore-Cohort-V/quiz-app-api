@@ -1,11 +1,13 @@
-class QueuersController < ActionController::Base
+module Api
+  class QueuersController < ActionController::Base
 
-  def index
+    def index
+
+    end
+
+    def create
+
+    end
 
   end
-
-  def create
-
-  end
-
 end

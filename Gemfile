@@ -47,6 +47,7 @@ group :production do
 end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
+ruby "2.1.4"
 
 
 
