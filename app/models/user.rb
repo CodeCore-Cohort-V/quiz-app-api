@@ -8,3 +8,4 @@ class User < ActiveRecord::Base
   has many :queued_bundles, through: :queuers, source: :bundle
 
   validates :username, presence: true
+end
