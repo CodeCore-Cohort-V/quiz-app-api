@@ -1,6 +1,10 @@
 class BundlesController < ApplicationController
   before_action :find_bundle, only: [:edit, :show, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
+
+  def index
+    @bundles = current_user.bundles
+  end
 
   def new
     @bundle = Bundle.new
