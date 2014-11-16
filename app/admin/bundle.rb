@@ -1,6 +1,23 @@
 ActiveAdmin.register Bundle do
 permit_params :name, :approved, :user_id, :topic_id, :difficulty 
- 
+
+end
+
+
+ActiveAdmin.register Question do
+  belongs_to :bundle
+ show do
+  h5 question.name
+     end 
+
+end
+
+
+
+
+
+
+
 
   # or
 
@@ -17,4 +34,4 @@ permit_params :name, :approved, :user_id, :topic_id, :difficulty
   # end
 
 
-end
+

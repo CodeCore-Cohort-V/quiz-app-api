@@ -17,7 +17,8 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Approved" do
           ul do
               Bundle.all.map do |post|
-              li link_to(post.name, admin_bundle_path(post))
+              li link_to(post.name, admin_bundle_path(post)) 
+               para post.difficulty
             end
           end
         end
