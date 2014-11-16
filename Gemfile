@@ -15,6 +15,7 @@ gem 'animate-rails'
 gem 'font-awesome-rails'
 gem 'faker'
 gem 'simple_form'
+gem 'cocoon'
 
 
 group :development do
