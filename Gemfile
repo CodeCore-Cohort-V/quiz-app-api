@@ -32,6 +32,7 @@ group :development do
   gem 'rails-erd'
   gem 'annotate', '~> 2.6.5'
   gem 'meta_request'
+  gem '3scale_client'
 
 end
 
@@ -47,7 +48,7 @@ group :production do
 end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
-ruby "2.1.4"
+ruby "2.1.3"
 
 
 

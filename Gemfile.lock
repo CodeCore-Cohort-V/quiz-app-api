@@ -19,6 +19,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    3scale_client (2.4.2)
+      nokogiri
     actionmailer (4.1.6)
       actionpack (= 4.1.6)
       actionview (= 4.1.6)
@@ -269,6 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  3scale_client
   activeadmin!
   animate-rails
   annotate (~> 2.6.5)
