@@ -57,21 +57,21 @@ Index all topics
 Index all bundles where topic_id is topic name. 
 
 ---
-`/api/queuers/create/:bundle_id`    POST
+`/api/queuers/:bundle_id&:user_id`    POST
 
 `queuers#create`
 
 Creates a new queue instance with bundle id and user id. Returns {saved: boolean}
 
 ---
-`/api/queuers`
+`/api/queuers&:user_id`
 
 `queuers#index`
 
 Lists all bundles in user's queue, listed by desc created at date of queuer. Sends only bundles, not nested resources
 
 ---
-`/api/attempts/:choice_id` POST
+`/api/attempts/:choice_id&user_id` POST
 
 `attempts#create`
 
