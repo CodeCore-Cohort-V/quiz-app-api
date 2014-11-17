@@ -1,14 +1,22 @@
 .nested-fields
+  = link_to_remove_association "X", f
   .form-group
-    = f.label       :question_type
-    = f.text_field  :question_type, class: "form-control"
-    = f.label       :content
-    = f.text_area  :content, class: "form-control"
-
-    = link_to_remove_association "remove question", f
+    = f.label         :content, "Add question content here"
+    = f.text_area     :content, class: 'form-control'  
+  .form-group
+    = f.radio_button  :question_type,       "multi", checked: true
+    = f.label         :question_type_multi, "multiple choice"
+    |  
+    = f.radio_button  :question_type,       "tf"
+    = f.label         :question_type_tf,    "true/false"
+    br
+  .form-group
+    = f.label         :example, "Enter a example that demonstrates or further explains the correct answer"
+    = f.text_area     :example, class: 'form-control'
+    hr
     br
     #choices
-      = f.simple_fields_for :choices do |choice|
+      = f.fields_for :choices do |choice|
         = render "choice_fields", f: choice
       .links
         = link_to_add_association "add choices", f, :choices
