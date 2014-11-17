@@ -65,7 +65,7 @@ Creates a new queue instance with bundle id and user id. Returns {saved: boolean
 ---
 `/api/queuers`
 
-`queuers#index`
+`queuers#index&:user_id`
 
 Lists all bundles in user's queue, listed by desc created at date of queuer. Sends only bundles, not nested resources
 
