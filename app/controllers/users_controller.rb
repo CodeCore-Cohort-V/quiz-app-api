@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'blank_layout'
   before_action :find_user, only: [:edit, :update]
 
   def new

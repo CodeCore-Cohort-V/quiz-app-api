@@ -1,0 +1,10 @@
+@import 'variables';
+
+.nav-primary {
+  background-color: $brand-primary;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}

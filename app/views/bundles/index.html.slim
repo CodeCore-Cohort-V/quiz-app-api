@@ -1,10 +1,23 @@
-h1 Bundle Index
-hr
-- @bundles.each do |bundle|
-  h2= link_to bundle.name, bundle
-  = link_to "#{icon('edit')} Edit".html_safe, edit_bundle_path(bundle), class: "btn btn-primary btn-xs"
-  = link_to "#{icon('trash-o')} Delete".html_safe, bundle, method: :delete, data: { confirm: "Are you use you want to delete this project?! :(" }, class: "btn btn-danger btn-xs"
-  hr
+- if !@bundles.present?
+  = render 'static/new_user_intro' 
+- else
+  .row
+    .col-md-8
+      h3 These are the bundles you've created so far.
+      h5 Add new bundles by topic and difficulty and submit them to QuizApp to be approved for the Bundle Exchange
+      p Save your bundle as many times as you need to while you're working on it and submit it when it's ready.
+      p Submitted bundles will be marked as Pending, Approved or Disapproved by a Quiz App administrator. 
+      p Pending and disapproved bundles can be changed once they are submitted, but once a bundle is approved it is locked into the Bundle Exchange and can't be edited further.  
+    .col-md-4
+      .btn.btn-primary = link_to "Start a new bundle", new_bundle_path, class: 'whiten'
+  .row
 
-br
-= link_to "#{icon('plus')} Add".html_safe, new_bundle_path, class: "btn btn-success"
+  hr
+  - @bundles.each do |bundle|
+    .well.brown
+      h2 = link_to bundle.name, bundle
+      = link_to "#{icon('edit')} Edit".html_safe, edit_bundle_path(bundle), class: "btn btn-primary btn-xs"
+      |  
+      = link_to "#{icon('trash-o')} Delete".html_safe, bundle, method: :delete, data: { confirm: "Are you use you want to delete this project?! :(" }, class: "btn btn-default btn-xs" 
+  hr
+  
