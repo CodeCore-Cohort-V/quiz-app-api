@@ -1,5 +1,3 @@
 json.queuedBundles @bundles.each do |bundle|
-  bundle.id
-  bundle.name
-  bundle.topic_id
-  bundle.difficulty
+  json.(bundle, :id, :name, :topic_id, :difficulty)
+end

@@ -9,7 +9,7 @@ module Api
     def create
       @user = User.find params[:user_id]
       @bundle = Bundle.find params[:bundle_id]
-      @queuer = @bundle.queuer.new
+      @queuer = @bundle.queuers.new
       @queuer.user = @user
       if @queuer.save
         render json: { saved: true }
