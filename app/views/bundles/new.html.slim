@@ -3,11 +3,14 @@ h1 NEW BUNDLE >:D
 = simple_form_for @bundle do |f|
   = f.input   :name
   = f.input   :difficulty
+  = f.input   :topic, collection: Topic.all, prompt: "Select a topic"
   h3 Le Question
   #questions
-    = f.simple_fields_for :questions do |question|
+    = f.fields_for :questions do |question|
       = render partial: "question_fields", locals: {f: question}
     .links
-      = link_to_add_association "add question", f, :questions
+      = link_to_add_association "add question", f, :questions, class: 'btn-sm btn-primary'
+      br
+      br
   = f.submit
 
