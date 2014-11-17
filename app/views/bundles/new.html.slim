@@ -2,8 +2,8 @@ h1 NEW BUNDLE >:D
 
 = simple_form_for @bundle do |f|
   = f.input   :name
-  = f.input   :difficulty
-  = f.input   :topic, collection: Topic.all, prompt: "Select a topic"
+  = f.input   :topic,      collection: Topic.all, default: Topic.first
+  = f.input   :difficulty, collection: difficulties, default: difficulties[0]
   h3 Le Question
   #questions
     = f.fields_for :questions do |question|

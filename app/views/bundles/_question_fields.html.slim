@@ -1,12 +1,13 @@
 .nested-fields
-  = link_to_remove_association "X", f, class: 'btn-sm btn-danger'
+  = link_to_remove_association "X", f
   .form-group
     = f.label         :content, "Add question content here"
     = f.text_area     :content, class: 'form-control'  
   .form-group
-    = f.radio_button  :question_type,       "multi",          class: 'form-control'
+    = f.radio_button  :question_type,       "multi", checked: true
     = f.label         :question_type_multi, "multiple choice"
-    = f.radio_button  :question_type,       "tf",             class: 'form-control'
+    |  
+    = f.radio_button  :question_type,       "tf"
     = f.label         :question_type_tf,    "true/false"
     br
   .form-group
