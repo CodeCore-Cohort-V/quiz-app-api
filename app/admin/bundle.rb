@@ -1,19 +1,30 @@
 ActiveAdmin.register Bundle do
-permit_params :name, :approved, :user_id, :topic_id, :difficulty 
+  show do
+    attributes_table do
+      row :name
+      row :difficulty
+    end
 
-  # scope :pending, where(:approved => false)
 
-  # or
+  panel "User" do
+    attributes_table_for bundle.user do
+      row :email
+    end
+  end
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
-
+  panel "Questions" do
+  table_for bundle.questions do
+    column "Content" do |question|
+     question.content
+    end
+    column "Examples" do |question|
+     question.example
+   end
+  end
 end
+
+
+
+  end
+end
+
