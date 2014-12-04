@@ -25,8 +25,12 @@ class BundlesController < ApplicationController
   def edit
     @questions = @bundle.questions.all
   end
-
+# def toggle_approved
+# @bundle = Bundle.find params[:id]
+# @bundle.toggle!(:approved)
+# end
   def update
+
     @bundle.update bundle_params
     if @bundle.save
       redirect_to @bundle, notice: "Updated Successfully!! :D"
@@ -47,7 +51,7 @@ class BundlesController < ApplicationController
   end
 
   private
-
+ 
   def find_bundle
     @bundle = Bundle.find params[:id]
   end
